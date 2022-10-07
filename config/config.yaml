@@ -1,0 +1,86 @@
+RNA_mkfastq_reads:
+- R1
+- R2
+- I1
+- I2
+bcl_file: data/mkfastq/bcl_folder
+fastq_path: outs/fastq_path/flowcell_name_rna
+fastq_path_atac: outs/fastq_path/flocell_name_atac
+fastq_undetermined: outs/fastq_path
+fc:
+- '1'
+filter_gtf: false
+flow_cell: flowcell_name_rna
+flow_cell_atac: flocell_name_atac
+gs_bucket: zeis_workflow/atlas_V1
+lanes:
+- '1'
+- '2'
+- '3'
+- '4'
+mkfastq_files:
+- outs/input_samplesheet.csv
+- outs/interop_path/IndexMetricsOut.bin
+- outs/fastq_path/Reports/html/Report.css
+- outs/fastq_path/Reports/html/index.html
+- outs/fastq_path/Reports/html/tree.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/all/all/all/lane.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/all/all/all/laneBarcode.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/default/all/all/lane.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/default/all/all/laneBarcode.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/default/Undetermined/all/lane.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/default/Undetermined/all/laneBarcode.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/default/Undetermined/unknown/lane.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/default/Undetermined/unknown/laneBarcode.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/flowcell_name_rna/all/all/lane.html
+- outs/fastq_path/Reports/html/flowcell_name_rna/flowcell_name_rna/all/all/laneBarcode.html
+read:
+- R1
+- R2
+reference_files:
+- Genome
+- SAindex
+- chrNameLength.txt
+- exonInfo.tab
+- sjdbInfo.txt
+- transcriptInfo.tab
+- Log.out
+- chrLength.txt
+- chrStart.txt
+- geneInfo.tab
+- sjdbList.fromGTF.out.tab
+- SA
+- chrName.txt
+- exonGeTrInfo.tab
+- genomeParameters.txt
+- sjdbList.out.tab
+references: config/references.tsv
+star_files:
+- Aligned.sortedByCoord.out.bam
+- Log.final.out
+- Log.progress.out
+- SJ.out.tab
+- Solo.out/Barcodes.stats
+- Solo.out/Gene/Features.stats
+- Solo.out/Gene/Summary.csv
+- Solo.out/Gene/UMIperCellSorted.txt
+- Solo.out/Gene/raw/barcodes.tsv
+- Solo.out/Gene/raw/features.tsv
+- Solo.out/Gene/raw/matrix.mtx
+- Solo.out/Gene/filtered/barcodes.tsv
+- Solo.out/Gene/filtered/features.tsv
+- Solo.out/Gene/filtered/matrix.mtx
+- Solo.out/GeneFull/Features.stats
+- Solo.out/GeneFull/Summary.csv
+- Solo.out/GeneFull/UMIperCellSorted.txt
+- Solo.out/GeneFull/raw/barcodes.tsv
+- Solo.out/GeneFull/raw/features.tsv
+- Solo.out/GeneFull/raw/matrix.mtx
+- Solo.out/GeneFull/filtered/barcodes.tsv
+- Solo.out/GeneFull/filtered/features.tsv
+- Solo.out/GeneFull/filtered/matrix.mtx
+- Solo.out/Velocyto/Features.stats
+- Solo.out/Velocyto/Summary.csv
+- Solo.out/Velocyto/raw/barcodes.tsv
+- Solo.out/Velocyto/raw/features.tsv
+- Solo.out/Velocyto/raw/matrix.mtx
