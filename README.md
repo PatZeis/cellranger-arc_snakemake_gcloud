@@ -24,7 +24,7 @@ tar -cvf bcl_folder_atac.tar bcl_folder_atac
 ```
 Store archived bcl folder at gcloud in the dedicated folders: <insertbucket>/data/mkfastq/ for RNA or <insertbucket>/data/mkfastq/ATAC/ for ATAC. Example paths to RNA and ATAC archived bcl folders: zeis_workflows/atlas_V1/data/mkfastq/bcl_folder.tar and zeis_workflows/atlas_V1/data/mkfastq/ATAC/bcl_atac.tar
 #### generate sample reference file and upload to gcloud storage:
-After cloning the github repository, change to following directory: 'cellranger-arc_snakemake_gcloud/config/' and edit the 'generate_mksample_file.sh' script with sample names, corresponding RNA and ATAC sample index sets( samples & indexes should have matching order separated by ".") as well as flow cell names for RNA and ATAC flow cell runs (can be derived from RunInfo.xml file in bcl-flow cell output folder).
+After cloning the github repository, change to following directory: 'cellranger-arc_snakemake_gcloud/config/' and edit the 'generate_mksample_file.sh' script with sample names, corresponding RNA and ATAC sample index sets( samples & indexes should have matching order separated by ".") as well as flow cell names for RNA and ATAC flow cell runs and number of flow cell lanes (can be derived from RunInfo.xml file in bcl-flow cell output folder).
 After editing the script generate the 'mkfastq_samples.tsv' 
 ``` bash 
 ./generate_mksample_file.sh
