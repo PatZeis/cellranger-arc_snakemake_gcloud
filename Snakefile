@@ -42,14 +42,14 @@ rule demultiplex_bcl_file:
     input:
         cr = 'data/mkfastq/cellranger-arc-2.0.2.tar.gz', ### download cellranger archive from the 10x website and store at google bucket in bucket/data/mkfastq
         csv = 'data/mkfastq/cellranger_arc_mkfastq_samplefile_{sample}.csv',
-        bcl = 'data/mkfastq/bcl_folder.tar' ###  archive bcl folder: tar -cvf bcl_rna.tar bcl_rna
+        bcl = 'data/mkfastq/bcl_folder_rna.tar' ###  archive bcl folder: tar -cvf bcl_rna.tar bcl_rna
     output:
         mkfastq = 'data/mkfastq/{sample}.tar',  
         order_rna = 'data/mkfastq/{sample}_dump.tar'
     params:
         sampleid = '{sample}',  
         sampleid_tar = '{sample}.gz',
-        bcl_folder = 'bcl_SP1_affinia',
+        bcl_folder = 'bcl_folder_rna',
         dump = '{sample}_dump',
         rna_fq_folder = expand( '{{sample}}/{fastq_path}',
                              fastq_path=config['fastq_path'],
@@ -109,14 +109,14 @@ rule demultiplex_bcl_file_atac:
     input:
         cr = 'data/mkfastq/cellranger-arc-2.0.2.tar.gz',
         csv = 'data/mkfastq/ATAC/cellranger_arc_mkfastq_samplefile_{sample}.csv',
-        bcl = 'data/mkfastq/ATAC/bcl_atac.tar'
+        bcl = 'data/mkfastq/ATAC/bcl_folder_atac.tar'
     output:
         mkfastq = 'data/mkfastq/ATAC/{sample}.tar',  
         order_atac = 'data/mkfastq/ATAC/{sample}_dump.tar'
     params:
         sampleid = '{sample}',  
         sampleid_tar = '{sample}.gz',
-        bcl_folder = 'bcl_atac', 
+        bcl_folder = 'bcl_folder_atac', 
         atac_fq_folder = expand( '{{sample}}/{fastq_path_atac}',
                              fastq_path_atac=config['fastq_path_atac'],
                              ),
